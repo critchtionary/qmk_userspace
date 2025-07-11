@@ -44,6 +44,8 @@ static void print_status_narrow(void) {
     oled_write_P(PSTR("\n\n"), false);
     if (get_highest_layer(default_layer_state) == 1) {
         oled_write_ln_P(PSTR("Mac"), false);
+    } else if (get_highest_layer(default_layer_state) == 2) {
+        oled_write_ln_P(PSTR("Lin"), false);
     } else {
         oled_write_ln_P(PSTR("Win"), false);
     }
@@ -54,13 +56,13 @@ static void print_status_narrow(void) {
         case 0:
             oled_write_P(PSTR("Base\n"), false);
             break;
-        case 2:
+        case 3:
             oled_write_P(PSTR("Cmds\n"), false);
             break;
-        case 3:
+        case 4:
             oled_write_P(PSTR("Symbl"), false);
             break;
-        case 4:
+        case 5:
             oled_write_P(PSTR("Adjst"), false);
             break;
         default:
