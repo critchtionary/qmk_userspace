@@ -56,13 +56,13 @@ static void print_status_narrow(void) {
         case 0:
             oled_write_P(PSTR("Base\n"), false);
             break;
-        case 3:
+        case 2:
             oled_write_P(PSTR("Cmds\n"), false);
             break;
-        case 4:
+        case 3:
             oled_write_P(PSTR("Symbl"), false);
             break;
-        case 5:
+        case 4:
             oled_write_P(PSTR("Adjst"), false);
             break;
         default:
