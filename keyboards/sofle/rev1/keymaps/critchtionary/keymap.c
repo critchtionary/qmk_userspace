@@ -305,7 +305,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                     unregister_mods(mod_config(MOD_LGUI));
                     unregister_code(KC_Q);
                 } else if (get_highest_layer(default_layer_state) == _JKLP_LIN) {
-                    // Linux
                     unregister_mods(mod_config(MOD_LCTL));
                     unregister_mods(mod_config(MOD_LALT));
                     unregister_code(KC_L);
@@ -321,6 +320,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                     // Mac
                     register_mods(mod_config(MOD_LALT));
                     register_code(KC_3);
+                } else if (get_highest_layer(default_layer_state) == _JKLP_LIN) {
+                    // Linux
+                    set_unicode_input_mode(UNICODE_MODE_LINUX);
+                    send_unicode_string("£");
                 } else {
                     // Windows
                     set_unicode_input_mode(UNICODE_MODE_WINDOWS);
