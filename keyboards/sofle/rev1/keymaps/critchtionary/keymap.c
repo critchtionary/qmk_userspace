@@ -289,6 +289,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                     register_mods(mod_config(MOD_LCTL));
                     register_mods(mod_config(MOD_LGUI));
                     register_code(KC_Q);
+                } else if (get_highest_layer(default_layer_state) == _JKLP_LIN) {
+                    // Linux
+                    register_mods(mod_config(MOD_LCTL));
+                    register_mods(mod_config(MOD_LALT));
+                    register_code(KC_L);
                 } else {
                     // Windows
                     register_mods(mod_config(MOD_LGUI));
@@ -299,6 +304,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                     unregister_mods(mod_config(MOD_LCTL));
                     unregister_mods(mod_config(MOD_LGUI));
                     unregister_code(KC_Q);
+                } else if (get_highest_layer(default_layer_state) == _JKLP_LIN) {
+                    // Linux
+                    unregister_mods(mod_config(MOD_LCTL));
+                    unregister_mods(mod_config(MOD_LALT));
+                    unregister_code(KC_L);
                 } else {
                     unregister_mods(mod_config(MOD_LGUI));
                     unregister_code(KC_L);
